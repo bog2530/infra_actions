@@ -68,7 +68,7 @@ jobs:
           #passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull bog2530/test
+            sudo docker pull bog2530/test:lates
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 8000:5000 bog2530/test
+            sudo docker run --rm -d -p 8000:5000 bog2530/test:lates
